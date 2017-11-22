@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour {
 
 	private Rigidbody2D Rb;
-	public GameObject source;
 
 	public float speed;
 
@@ -14,8 +13,6 @@ public class BulletMovement : MonoBehaviour {
 	{
 		Rb = GetComponent<Rigidbody2D> ();
 
-		//Make self vector eaual to source
-
 		Rb.velocity = transform.right * speed;
 	}
 	
@@ -23,4 +20,13 @@ public class BulletMovement : MonoBehaviour {
 	void Update () {
 		
 	}
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag ("Wall")) {
+			Destroy (gameObject);
+		}
+		if (other.CompareTag("Asteroid")) {
+			Destroy (gameObject);
+		}
+	}
+
 }
