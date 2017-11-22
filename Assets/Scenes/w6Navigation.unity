@@ -330,9 +330,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1326693944}
-  - component: {fileID: 1326693945}
-  - component: {fileID: 1326693946}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: AsteroidSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,35 +350,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1326693945
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1326693943}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 4181b137316107745a61960ee98f3cec, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &1326693946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1326693943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0f3c98d4a1a65488d53d5905304aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  Asteroid: {fileID: 1494425098649428, guid: ffc11cf9a736595429b99eab763cf8d7, type: 2}
-  spawnRate: 0
 --- !u!1001 &1356207400
 Prefab:
   m_ObjectHideFlags: 0
