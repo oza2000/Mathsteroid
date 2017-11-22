@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4023491427051894}
   - component: {fileID: 68434213158584410}
+  - component: {fileID: 68781662475672978}
   m_Layer: 11
   m_Name: WallsAsteroid
   m_TagString: Wall
@@ -131,6 +132,28 @@ EdgeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 9.736576, y: -5.0182095}
+  - {x: -9.700597, y: -5.0207815}
+  - {x: -9.745535, y: 4.9664474}
+  - {x: 9.774517, y: 5.0203195}
+  - {x: 9.742916, y: -4.9971175}
+  - {x: 9.742392, y: -5.059013}
+  - {x: 9.16019, y: -5.01977}
+--- !u!68 &68781662475672978
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239156434167320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
