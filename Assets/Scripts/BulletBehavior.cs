@@ -8,8 +8,8 @@ public class BulletBehavior : MonoBehaviour {
 
 	public float speed;
 
-	private float m_SolutionValue;
-	public float SolutionValue { get { return m_SolutionValue; } set { m_SolutionValue = value; } }
+	private int m_SolutionValue;
+	public int SolutionValue { get { return m_SolutionValue; } set { m_SolutionValue = value; } }
 
 	// Use this for initialization
 	void Start ()

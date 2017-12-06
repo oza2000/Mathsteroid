@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpaceShipShooting : MonoBehaviour {
 
-	public float ShotValue = 1.0f;
+	public delegate void onRotateAmmo(int ShotValue);
+	public static onRotateAmmo ammoRotated;
+
+	public int ShotValue = 1;
 	public GameObject Bullet;
 
 	// Use this for initialization
@@ -40,5 +43,10 @@ public class SpaceShipShooting : MonoBehaviour {
 		if (ShotValue >= 6){
 			ShotValue = 1;
 		}
+
+		if (ammoRotated != null) {
+			ammoRotated (ShotValue);
+		}
+			
 	}
 }
