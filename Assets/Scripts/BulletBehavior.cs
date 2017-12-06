@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMovement : MonoBehaviour {
+public class BulletBehavior : MonoBehaviour {
 
 	private Rigidbody2D Rb;
 
 	public float speed;
 
+	private float m_SolutionValue;
+	public float SolutionValue { get { return m_SolutionValue; } set { m_SolutionValue = value; } }
+
 	// Use this for initialization
 	void Start ()
+
 	{
 		Rb = GetComponent<Rigidbody2D> ();
 

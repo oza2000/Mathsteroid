@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AsteroidDestroy : MonoBehaviour {
 
+	public int ProblemValue;
+
 	// Use this for initialization
 	void Start () {
-		
+		ProblemValue = Random.Range (1, 5);
 	}
 	
 	// Update is called once per frame
@@ -14,7 +16,7 @@ public class AsteroidDestroy : MonoBehaviour {
 		
 	}
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("Bullet")) {
+		if (other.CompareTag ("Bullet") && other.gameObject.GetComponent<BulletBehavior>().SolutionValue==ProblemValue) {
 			Destroy (gameObject);
 		}
 	}
