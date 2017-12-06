@@ -17,8 +17,11 @@ public class AsteroidSpawn : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Wall")) {
-			transform.Rotate(new Vector3(0,0,5));
-			Instantiate (Asteroid, gameObject.transform.position, gameObject.transform.rotation);
+			transform.Rotate(new Vector3(0,0,Random.Range(0.0f, 360.0f)));
+
+			GameObject asteroid = Instantiate (Asteroid, gameObject.transform.position, gameObject.transform.rotation);
+			asteroid.GetComponent<AsteroidMovement>().RandomDirection();
+
 		}
 	}
 }
