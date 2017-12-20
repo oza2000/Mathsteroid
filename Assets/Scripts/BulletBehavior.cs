@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MultiplicationGame;
 
 public class BulletBehavior : MonoBehaviour {
 
@@ -8,8 +9,7 @@ public class BulletBehavior : MonoBehaviour {
 
 	public float speed;
 
-	private int m_SolutionValue;
-	public int SolutionValue { get { return m_SolutionValue; } set { m_SolutionValue = value; } }
+	public Problem SolutionValue;
 
 	// Use this for initialization
 	void Start ()

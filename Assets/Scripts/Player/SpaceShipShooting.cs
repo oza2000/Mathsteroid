@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MultiplicationGame;
 
 public class SpaceShipShooting : MonoBehaviour {
 
@@ -10,9 +11,11 @@ public class SpaceShipShooting : MonoBehaviour {
 	public int ShotValue = 0;
 	public GameObject Bullet;
 
+	public Problem[] ProblemArray;
+
 	// Use this for initialization
 	void Start () {
-
+		ProblemArray = Problem.GenerateListProblemsForTimesTable(6);
 	}
 	
 	// Update is called once per frame
@@ -30,12 +33,13 @@ public class SpaceShipShooting : MonoBehaviour {
 
 	void Shoot () {
 		GameObject bullet = Instantiate (Bullet, gameObject.transform.position, gameObject.transform.rotation);
-		bullet.GetComponent<BulletBehavior>().SolutionValue = ShotValue;
+		bullet.GetComponent<BulletBehavior>().SolutionValue = ProblemArray[ShotValue];
 
 		RotateAmmo ();
 	}
 
 	void RotateAmmo () {
+		
 		//Add 1 to shot value
 		ShotValue += 1;
 

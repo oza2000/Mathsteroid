@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidMovement : MonoBehaviour {
-	public float speed = 0.1f;
-	public float speedReadyTime;
-	public float speedRate;
+	public float speed = 5.0f;
+	public float speedReadyTime = 0.5f;
+	public float speedRate = 0.00001f;
 
 	//public Vector2 currentVel;
 
 	// Use this for initialization
 	void Awake () {
 		// Initial Velocity
-		RandomDirection();
 	}
 
 	void Start(){
 		//currentVel = GetComponent<Rigidbody2D>().velocity;
-		speedReadyTime = Time.time;
+		RandomDirection();
+
 	}
 
 	public void RandomDirection() {
@@ -25,11 +25,12 @@ public class AsteroidMovement : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (speedRate > 0) {
-			speedRate -= 1;
-			speedReadyTime = Time.time + speedRate;
+		speedReadyTime -= Time.deltaTime;
+		if (speedReadyTime <= 0) {
+			speedReadyTime = 5.0f;
+
 			//GetComponent<Rigidbody2D> ().velocity = (currentVel * (speed-4));
-			GetComponent<Rigidbody2D> ().velocity = (GetComponent<Rigidbody2D> ().velocity * (speed-4));
+			GetComponent<Rigidbody2D> ().velocity = (GetComponent<Rigidbody2D> ().velocity * (1 + (speedRate)));
 		}
 	}
 
