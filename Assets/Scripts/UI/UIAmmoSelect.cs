@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIAmmoSelect : MonoBehaviour {
 	private Text Ammo;
+	string[] answers = {"3","4","6","7","8"};
 
 	void Awake() {
 		Ammo = gameObject.GetComponent<Text> ();

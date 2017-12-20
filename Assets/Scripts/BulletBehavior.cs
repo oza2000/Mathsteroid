@@ -26,7 +26,6 @@ public class BulletBehavior : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Wall")) {
-			Debug.Log ("Hit wall");
 			Destroy (gameObject);
 		}
 		if (other.CompareTag("Asteroid")) {

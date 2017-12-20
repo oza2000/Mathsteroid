@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpaceShipShooting : MonoBehaviour {
 
 	public delegate void onRotateAmmo(int ShotValue);
-	public static onRotateAmmo ammoRotated;
+	public static event onRotateAmmo ammoRotated;
 
-	public int ShotValue = 1;
+	public int ShotValue = 0;
 	public GameObject Bullet;
 
 	// Use this for initialization
@@ -40,8 +40,8 @@ public class SpaceShipShooting : MonoBehaviour {
 		ShotValue += 1;
 
 		//if 6, turn back to 1
-		if (ShotValue >= 6){
-			ShotValue = 1;
+		if (ShotValue >= 5){
+			ShotValue = 0;
 		}
 
 		if (ammoRotated != null) {
