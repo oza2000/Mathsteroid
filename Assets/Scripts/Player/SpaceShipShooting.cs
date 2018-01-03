@@ -15,7 +15,10 @@ public class SpaceShipShooting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ProblemArray = Problem.GenerateListProblemsForTimesTable(6);
+		ProblemArray = Problem.GenerateArrayProblemsForTimesTable(6);
+		if (ammoRotated != null) {
+			ammoRotated (ShotValue);
+		}	
 	}
 	
 	// Update is called once per frame

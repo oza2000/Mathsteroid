@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MultiplicationGame;
 
 public class UIAmmoSelect : MonoBehaviour {
 	private Text Ammo;
-	string[] answers = {"3","4","6","7","8"};
+	Problem[] answers;
 
 	void Awake() {
 		Ammo = gameObject.GetComponent<Text> ();
 		SpaceShipShooting.ammoRotated += OnAmmoRotated;
+		answers = Problem.GenerateArrayProblemsForTimesTable(6);
 	}
 
 	void Destroy() {
@@ -19,16 +21,6 @@ public class UIAmmoSelect : MonoBehaviour {
 	void OnAmmoRotated(int ShotValue)
 	{
 		//Debug.Log
-		Ammo.text = ShotValue.ToString ();
+		Ammo.text = answers[ShotValue].Answer.ToString();
 	} 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

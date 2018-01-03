@@ -17,6 +17,7 @@ public class AsteroidMovement : MonoBehaviour {
 	void Start(){
 		//currentVel = GetComponent<Rigidbody2D>().velocity;
 		RandomDirection();
+		transform.eulerAngles = new Vector3 (0, 0, 0);
 
 	}
 
