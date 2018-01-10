@@ -24,5 +24,6 @@ public class UIDestroyCount : MonoBehaviour {
 	}
 	void OnDestroyed (){
 		DestroyCount += 1;
+		dstCount.text = DestroyCount.ToString();
 	}
 }
