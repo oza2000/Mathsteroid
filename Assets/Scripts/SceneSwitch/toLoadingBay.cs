@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class toSelect6 : MonoBehaviour {
+public class toLoadingBay : MonoBehaviour {
 
 	private bool isTrigger;
 
@@ -21,16 +21,13 @@ public class toSelect6 : MonoBehaviour {
 			isTrigger = false;
 		}
 
-		if (Input.GetKey (KeyCode.Escape)) {
-			SceneManager.LoadScene(1);
-		}
 
 		//SceneManager.LoadScene(0);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Player") && isTrigger == true){
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(3);
 		}
 	}
 }

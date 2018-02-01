@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class toSelect6 : MonoBehaviour {
+public class toSelect6Bedroom : MonoBehaviour {
 
 	private bool isTrigger;
 
@@ -20,11 +20,7 @@ public class toSelect6 : MonoBehaviour {
 		else{
 			isTrigger = false;
 		}
-
-		if (Input.GetKey (KeyCode.Escape)) {
-			SceneManager.LoadScene(1);
-		}
-
+			
 		//SceneManager.LoadScene(0);
 	}
 
