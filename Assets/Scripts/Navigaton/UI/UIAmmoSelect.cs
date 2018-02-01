@@ -21,6 +21,8 @@ public class UIAmmoSelect : MonoBehaviour {
 	void OnAmmoRotated(int ShotValue)
 	{
 		//Debug.Log
-		Ammo.text = answers[ShotValue].Answer.ToString();
+		if (Ammo != null) {
+			Ammo.text = answers [ShotValue].Answer.ToString ();
+		}
 	} 
 }

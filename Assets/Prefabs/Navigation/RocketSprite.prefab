@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212688672495834102}
   - component: {fileID: 60603512051105350}
   - component: {fileID: 50892744696046694}
+  - component: {fileID: 114978255045909846}
   m_Layer: 9
   m_Name: RocketSprite
   m_TagString: Untagged
@@ -232,6 +233,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotValue: 0
   Bullet: {fileID: 1153879184601146, guid: c60e31e6554b9774db2c809f7d74cc4f, type: 2}
+--- !u!114 &114978255045909846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253693560850988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fcf035e0942884faf3302530a453b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPaused: 0
 --- !u!212 &212688672495834102
 SpriteRenderer:
   m_ObjectHideFlags: 1
