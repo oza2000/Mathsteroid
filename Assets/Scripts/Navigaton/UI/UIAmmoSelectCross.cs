@@ -1,16 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using MultiplicationGame;
 
 public class UIAmmoSelectCross : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	private TextMeshPro ammoSelectText;
+	Problem[] answers;
+
+	void Awake() {
+		ammoSelectText = gameObject.GetComponent<TextMeshPro>();
+		//ammoSelectText = ;
+
+		SpaceShipShooting.ammoRotated += OnAmmoRotated;
+		answers = Problem.GenerateArrayProblemsForTimesTable(6);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	//void Destroy() {
+	//	SpaceShipShooting.ammoRotated -= OnAmmoRotated;
+	//}
+
+	void OnAmmoRotated(int ShotValue)
+	{
+		//Debug.Log
+		ammoSelectText.text = answers[ShotValue].Answer.ToString();
+	} 
 }

@@ -11,21 +11,17 @@ public class AsteroidDestroy : MonoBehaviour {
 	public static event onDestroy Destroyed; 
 
 	public Problem AstProblem;
-	private static List<Problem> listOfProblems;
+	private static ProblemList listOfProblems;
 
 	private TextMeshPro AstText;
 
 	// Use this for initialization
 	void Start () {
 		if (listOfProblems == null || listOfProblems.Count == 0) {
-			listOfProblems = Problem.GenerateListProblemsForTimesTable (6);
+			listOfProblems = new ProblemList (6);
 		}
 		//Gen a random index to take a remove
-		System.Random rand = new System.Random();
-		int index = rand.Next (0, listOfProblems.Count);
-
-		AstProblem = listOfProblems [index];
-		listOfProblems.RemoveAt (index);
+		AstProblem = listOfProblems.PopRandomProblem();
 
 		AstText = gameObject.GetComponent<TextMeshPro>();
 		AstText.text = AstProblem.QuestionString;	

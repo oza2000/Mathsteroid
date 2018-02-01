@@ -92,7 +92,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &58367493119767674
 CircleCollider2D:
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4c6b95589a75f4ba67c0824e196542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   speedReadyTime: 0.5
   speedRate: 0.00001
 --- !u!114 &114976238575070966
@@ -152,6 +152,8 @@ MonoBehaviour:
   Asteroid: {fileID: 1494425098649428, guid: ffc11cf9a736595429b99eab763cf8d7, type: 2}
   spawnReadyTime: 0
   spawnRate: 5
+  numberOfAsteroids: 0
+  maxNumberOfAsteroids: 7
 --- !u!212 &212049700890572050
 SpriteRenderer:
   m_ObjectHideFlags: 1

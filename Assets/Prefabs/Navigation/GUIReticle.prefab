@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23830938281376872}
   - component: {fileID: 222420585584101908}
   - component: {fileID: 114912032059539446}
+  - component: {fileID: 114307772389698196}
   m_Layer: 0
   m_Name: TextMeshPro
   m_TagString: Untagged
@@ -99,6 +100,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336746192932486}
   m_Mesh: {fileID: 0}
+--- !u!114 &114307772389698196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336746192932486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76b5a72fa9dbcb4cb40c48ff1a15565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114912032059539446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,8 +139,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294967040
+  m_fontColor: {r: 0, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}

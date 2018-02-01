@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace MultiplicationGame
 {
-	public class EntryState: ILoadingBayState
+	public class AfterSecondAnswer: ILoadingBayState
 	{
 		Animator m_SpaceshipAnimator;
 		Animator m_BoxAnimator;
 		Problem m_CurrentProblem;
 
-		public EntryState (Animator SpaceshipAnimator, Animator BoxAnimator, Problem currentProblem)
+		public AfterSecondAnswer (Animator SpaceshipAnimator, Animator BoxAnimator, Problem currentProblem)
 		{
 			m_SpaceshipAnimator = SpaceshipAnimator;
 			m_BoxAnimator = BoxAnimator;
@@ -17,26 +17,22 @@ namespace MultiplicationGame
 		}
 		void ILoadingBayState.onEnterState()
 		{
-			m_SpaceshipAnimator.SetTrigger ("Enter");
-			m_BoxAnimator.SetTrigger ("bEnter");
+			m_SpaceshipAnimator.SetTrigger ("afterSecondAnswer");
+			m_BoxAnimator.SetTrigger ("bAfterSecondAnswer");
 		}
 		bool ILoadingBayState.isAnswerCorrect(int Answer)
 		{
-			//5+ modifier
-			Answer = Answer + m_CurrentProblem.secondNumber;
 			return m_CurrentProblem.IsCorrectAnswer(Answer);
 		}
-
+			
 		bool ILoadingBayState.needsInputToProgress()
 		{
 			return true;
 		}
-
 		float ILoadingBayState.getEndOfStateDelayTime ()
 		{
 			return 0.0f;
 		}
-
 	}
 }
 
