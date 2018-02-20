@@ -33,8 +33,9 @@ public class AsteroidDestroy : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Bullet") && other.gameObject.GetComponent<BulletBehavior>().SolutionValue.IsCorrectAnswer(AstProblem.Answer)){
 			Destroy (gameObject);
-			if (Destroyed != null)
+			if (Destroyed != null) {
 				Destroyed ();
+			}
 		}
 	}
 		

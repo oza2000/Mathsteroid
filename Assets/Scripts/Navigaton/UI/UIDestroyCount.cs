@@ -8,24 +8,29 @@ public class UIDestroyCount : MonoBehaviour {
 	private Text dstCount;
 	public int DestroyCount;
 
+	public delegate void onEndGame();
+	public static event onEndGame gameEnded;
+
 	void Awake() {
 		dstCount = gameObject.GetComponent<Text> ();
 		AsteroidDestroy.Destroyed += OnDestroyed;
 	}
 
-	// Use this for initialization
-	void Start () {
-		
+	void Destroy() {
+		AsteroidDestroy.Destroyed -= OnDestroyed;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 	void OnDestroyed (){
 		DestroyCount += 1;
 		if (dstCount != null) {
 			dstCount.text = DestroyCount.ToString ();
+
+			if (DestroyCount >= 30) {
+				if (gameEnded != null) {
+					gameEnded ();		//Run End Game
+				}
+				Debug.Log ("End Game Done");
+			}
 		}
 	}
 }
