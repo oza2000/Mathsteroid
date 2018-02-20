@@ -27,7 +27,7 @@ public class toBedroom : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.CompareTag ("Player") && isTrigger == true){
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(4);
 		}
 	}
 }
