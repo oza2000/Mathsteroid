@@ -14,7 +14,9 @@ namespace MultiplicationGame
 		//Load or Create
 		static public void LoadGameData()
 		{
-			string filePath = Application.dataPath + trophyFileData;
+			string filePath = Path.Combine(Application.dataPath, trophyFileData) ;
+			//FILEPATH
+			Debug.Log (filePath);
 
 			if (File.Exists (filePath)) {
 				string dataAsJson = File.ReadAllText (filePath);

@@ -38,7 +38,9 @@ public class TimesTableSelect : MonoBehaviour {
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		dspTimesTable.enabled = scene.buildIndex == 1;
+		if (dspTimesTable != null) {
+			dspTimesTable.enabled = scene.buildIndex == 1;
+		}
 	}
 
 	// Use this for initialization
