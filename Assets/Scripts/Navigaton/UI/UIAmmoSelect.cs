@@ -11,7 +11,7 @@ public class UIAmmoSelect : MonoBehaviour {
 	void Awake() {
 		Ammo = gameObject.GetComponent<Text> ();
 		SpaceShipShooting.ammoRotated += OnAmmoRotated;
-		answers = Problem.GenerateArrayProblemsForTimesTable(6);
+		answers = Problem.GenerateArrayProblemsForTimesTable(TimesTableSelect.CurrentTimesTable);
 	}
 
 	void Destroy() {

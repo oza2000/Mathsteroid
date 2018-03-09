@@ -14,16 +14,18 @@ public class UIAmmoSelectCross : MonoBehaviour {
 		//ammoSelectText = ;
 
 		SpaceShipShooting.ammoRotated += OnAmmoRotated;
-		answers = Problem.GenerateArrayProblemsForTimesTable(6);
+		answers = Problem.GenerateArrayProblemsForTimesTable(TimesTableSelect.CurrentTimesTable);
 	}
 
-	//void Destroy() {
-	//	SpaceShipShooting.ammoRotated -= OnAmmoRotated;
-	//}
+	void OnDestroy() {
+		SpaceShipShooting.ammoRotated -= OnAmmoRotated;
+		}
 
 	void OnAmmoRotated(int ShotValue)
 	{
 		//Debug.Log
 		ammoSelectText.text = answers[ShotValue].Answer.ToString();
 	} 
+
+
 }

@@ -21,7 +21,9 @@ public class toBedroom : MonoBehaviour {
 			isTrigger = false;
 		}
 		
-			
+		if (Input.GetKey (KeyCode.Escape)) {
+			SceneManager.LoadScene (4);
+		}
 		//SceneManager.LoadScene(0);
 	}
 

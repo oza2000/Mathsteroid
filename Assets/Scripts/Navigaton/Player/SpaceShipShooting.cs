@@ -18,27 +18,43 @@ public class SpaceShipShooting : MonoBehaviour {
 
 	public int overHeat = 0;
 
+	private bool m_doShot = false;
+	private bool m_doRotate = false;
+
 	// Next update in second
 	private int nextUpdate=1;
 
 	// Use this for initialization
 	void Start () {
-		ProblemArray = Problem.GenerateArrayProblemsForTimesTable(6);
+		ProblemArray = Problem.GenerateArrayProblemsForTimesTable(TimesTableSelect.CurrentTimesTable);
 		if (ammoRotated != null) {
 			ammoRotated (ShotValue);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		//Call Shoot
-		//if (Input.GetAxis("Fire1") > 0.0f) {
+
+	void Update() {
 		if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0)) && overHeat <= 3){
-			Shoot ();
+			m_doShot = true;
 		}
 		//if (Input.GetAxis("Fire2") > 0.0f) {
 		if(Input.GetKeyDown(KeyCode.R)||Input.GetMouseButtonDown(1)){
+			m_doRotate = true;
+		}
+	}
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+		//Call Shoot
+		//if (Input.GetAxis("Fire1") > 0.0f) {
+		if(m_doShot && overHeat <= 3){
+			Debug.Log ("Calling Shoot");
+			Shoot ();
+			m_doShot = false;
+		}
+		//if (Input.GetAxis("Fire2") > 0.0f) {
+		if(m_doRotate){
 			RotateAmmo ();
+			m_doRotate = false;
 		}
 
 		//Time
@@ -55,7 +71,7 @@ public class SpaceShipShooting : MonoBehaviour {
 		overHeat += 1;
 		GameObject bullet = Instantiate (Bullet, gameObject.transform.position, gameObject.transform.rotation);
 		bullet.GetComponent<BulletBehavior>().SolutionValue = ProblemArray[ShotValue];
-
+		Debug.Log ("Fired Bullet");
 		for(int i = 0; i < Random.Range(1, 6); i++)
 		{
 			RotateAmmo ();

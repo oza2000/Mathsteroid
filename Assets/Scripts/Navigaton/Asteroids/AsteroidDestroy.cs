@@ -18,7 +18,7 @@ public class AsteroidDestroy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (listOfProblems == null || listOfProblems.Count == 0) {
-			listOfProblems = new ProblemList (6);
+			listOfProblems = new ProblemList (TimesTableSelect.CurrentTimesTable);
 		}
 		//Gen a random index to take a remove
 		AstProblem = listOfProblems.PopRandomProblem();
