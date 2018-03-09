@@ -496,7 +496,7 @@ Animator:
   m_GameObject: {fileID: 226693072}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7e79f2d25860984bab845175ea80c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63e7136685a63024b8e523dfa1934853, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -979,6 +979,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 616134839}
+  - component: {fileID: 616134840}
   m_Layer: 0
   m_Name: PedistalS
   m_TagString: Untagged
@@ -1004,6 +1005,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616134840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 616134838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c378b4887d5e96e45993dfdc6390e81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pedistal3: {fileID: 1080654395}
+  pedistal4: {fileID: 956131540}
+  pedistal6: {fileID: 761859238}
+  pedistal7: {fileID: 744411513}
+  pedistal8: {fileID: 226693072}
 --- !u!1 &744411513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1062,7 @@ Animator:
   m_GameObject: {fileID: 744411513}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7e79f2d25860984bab845175ea80c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4d9909887ef09d6469807133751d7031, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1145,7 +1162,7 @@ Animator:
   m_GameObject: {fileID: 761859238}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7e79f2d25860984bab845175ea80c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16fe1a94ae78eaa4a9ceaccd707789aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

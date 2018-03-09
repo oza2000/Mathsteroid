@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerTrophyData : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class playerTrophyData {
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public bool[] trophies;
+
+	public playerTrophyData() {
+		trophies = new bool[10];
 	}
+
 }

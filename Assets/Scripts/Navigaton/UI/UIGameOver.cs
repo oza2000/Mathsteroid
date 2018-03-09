@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MultiplicationGame;
 
 public class UIGameOver : MonoBehaviour {
 
@@ -25,5 +26,8 @@ public class UIGameOver : MonoBehaviour {
 		if (WinText != null){
 			WinText.text = "GAME OVER          Asteroid Count Reached! Time taken (Sec):" + timer.ToString() + "Press Q to reset or ESC to exit";
 		}
+
+		TrophyManager.PlayerCompletedLevel (TimesTableSelect.CurrentTimesTable);
+
 	}
 }

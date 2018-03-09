@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/bedroomStart.unity
     guid: 15f353b6d4794dd4786a426dbcbf4b53
+  - enabled: 1
+    path: Assets/Scenes/trophyRoom.unity
+    guid: fb5a8fec03196af469e4e9f8ca4410ed
