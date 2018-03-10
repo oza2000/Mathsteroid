@@ -7,10 +7,12 @@ public class PlayerMovementFly : MonoBehaviour {
 	public float speed = 0.1f;
 	public GameObject skin;
 	private GameObject skinInstance;
+	private LineRenderer AimLine;
 
 	// Use this for initialization
 	void Start () {
 		skinInstance = Instantiate (skin, gameObject.transform);
+		AimLine = skinInstance.GetComponent<LineRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -28,5 +30,7 @@ public class PlayerMovementFly : MonoBehaviour {
 		//skinInstance.transform.LookAt(crossHairPos);
 		//skinInstance.transform.Rotate (new Vector3 (0, -90, 0));
 		skinInstance.transform.right = crossHairPos - skinInstance.transform.position;
+		AimLine.SetPosition (0, skinInstance.transform.position);
+		AimLine.SetPosition (1, Vector3.Project(skinInstance.transform.right * 20, skinInstance.transform.right) + skinInstance.transform.position);
 	}
 }
