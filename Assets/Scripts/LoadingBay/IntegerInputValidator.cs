@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class IntegerInputValidator : MonoBehaviour {
 
-	public InputField mainInputField;
+	private InputField mainInputField;
 
 	private char MyValidate(char charToValidate){
 		int number;

@@ -64,38 +64,39 @@ public class StateControler : MonoBehaviour {
 
 	private IEnumerator getNextStateForCurrentState(ILoadingBayState currentState)
 	{
-		if (InputAnswerField.text != null && currentState.isAnswerCorrect (int.Parse (InputAnswerField.text))) 
-		{
+		if (InputAnswerField.text != null && currentState.isAnswerCorrect (int.Parse (InputAnswerField.text))) {
 			eventStateNumber++;
-			}
-		if (eventStateNumber > 3) {
-			eventStateNumber = 0;
-			}
-		if (ShipUpdated != null) {
-			ShipUpdated (eventStateNumber);
-			if (eventStateNumber == 0) {	
-				updateProblems ();
-			}
 
-			// currentState = getNextStateForCurrentState (StateList [eventStateNumber]);
-			ILoadingBayState newCurrentState = StateList [eventStateNumber];
-			while (!newCurrentState.needsInputToProgress ()) {
-				newCurrentState.onEnterState ();
-				yield return new WaitForSeconds (newCurrentState.getEndOfStateDelayTime ());
-				eventStateNumber++;
-				if (eventStateNumber > 3) {
-					eventStateNumber = 0;
-				}
-				if (ShipUpdated != null) {
-					ShipUpdated (eventStateNumber);
-				}
+			if (eventStateNumber > 3) {
+				eventStateNumber = 0;
+			}
+			if (ShipUpdated != null) {
+				ShipUpdated (eventStateNumber);
 				if (eventStateNumber == 0) {	
 					updateProblems ();
 				}
-				newCurrentState = StateList [eventStateNumber];
+
+				// currentState = getNextStateForCurrentState (StateList [eventStateNumber]);
+				ILoadingBayState newCurrentState = StateList [eventStateNumber];
+				while (!newCurrentState.needsInputToProgress ()) {
+					newCurrentState.onEnterState ();
+					yield return new WaitForSeconds (newCurrentState.getEndOfStateDelayTime ());
+					eventStateNumber++;
+					if (eventStateNumber > 3) {
+						eventStateNumber = 0;
+					}
+					if (ShipUpdated != null) {
+						ShipUpdated (eventStateNumber);
+					}
+					if (eventStateNumber == 0) {	
+						updateProblems ();
+					}
+					newCurrentState = StateList [eventStateNumber];
+				}
+				newCurrentState.onEnterState ();
 			}
-			newCurrentState.onEnterState ();
-		}
+		} 
+
 	}
 
 	public void OnHandleInputEnded()
