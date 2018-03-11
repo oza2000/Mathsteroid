@@ -47,6 +47,13 @@ public class Pause : MonoBehaviour {
 			else if (isPaused == false)
 				isPaused = true;
 		}
+
+		if (Input.GetKey (KeyCode.Escape)) {
+			isPaused = false;
+			isPausedLocked = false;
+			Time.timeScale = 1;
+			SceneManager.LoadScene(1);
+		}
 	}
 
 	void onEndGame() {

@@ -10,6 +10,7 @@ public class trophyAnimationControler : MonoBehaviour {
 	public GameObject pedistal6;
 	public GameObject pedistal7;
 	public GameObject pedistal8;
+	public GameObject Cube;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class trophyAnimationControler : MonoBehaviour {
 		Animator Pedistal6 = pedistal6.GetComponent<Animator> ();
 		Animator Pedistal7 = pedistal7.GetComponent<Animator> ();
 		Animator Pedistal8 = pedistal8.GetComponent<Animator> ();
+		Animator WinCube = Cube.GetComponent<Animator> ();
 
 		//Check for trophies
 		playerTrophyData gameData = TrophyManager.GetGameData();
@@ -31,5 +33,10 @@ public class trophyAnimationControler : MonoBehaviour {
 			Pedistal7.SetTrigger ("Is7on");
 		if (gameData.trophies [8])
 			Pedistal8.SetTrigger ("Is8on");
+
+		if (gameData.trophies [3] && gameData.trophies [4] && gameData.trophies [6] && gameData.trophies [7] && gameData.trophies [8])
+		{
+			WinCube.SetTrigger ("All Trophies");
+		}
 	}
 }

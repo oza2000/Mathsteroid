@@ -13,7 +13,9 @@ public class TimesTableSelect : MonoBehaviour {
 
 	public static int CurrentTimesTable { get { return candidateNumbersHouse [timesTableHouseIndex]; } }
 
-	public static int[] candidateNumbersHouse = {3,4,6,7,8};
+	public static int[] candidateNumbersHouse = {0,3,4,6,7,8};
+	private static int SecretCount = 0;
+	private static int secretThreshold = 50;
 
 	private bool isTrigger;
 
@@ -67,8 +69,12 @@ public class TimesTableSelect : MonoBehaviour {
 
 	void switchHouse (){
 		timesTableHouseIndex += 1;
-		if (timesTableHouseIndex >= candidateNumbersHouse.Length) {
+		SecretCount += 1;
+		if (timesTableHouseIndex >= candidateNumbersHouse.Length && SecretCount >= secretThreshold) {
 			timesTableHouseIndex = 0;
+		}
+		if (timesTableHouseIndex >= candidateNumbersHouse.Length && SecretCount < secretThreshold) {
+			timesTableHouseIndex = 1;
 		}
 		dspTimesTable.text = candidateNumbersHouse[timesTableHouseIndex].ToString ();
 	}
